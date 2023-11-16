@@ -1,9 +1,31 @@
 import React from 'react';
 import css from './Form.module.css';
-import { usePhoneBook } from 'hooks/PhoneBookContext';
+
+import { addContact } from '../../redux/contactSlice';
+import { useDispatch } from 'react-redux';
 
 export default function Form() {
-  const { handleSubmit } = usePhoneBook();
+  const dispatch = useDispatch();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const name = form.elements.name.value;
+    const tel = form.elements.number.value;
+    dispatch(addContact(name, tel));
+    form.reset();
+  };
+
+  // const arrayOfName = contacts.map(contact => contact.name.toLowerCase());
+
+  // if (arrayOfName.includes(name.toLowerCase())) {
+  //   Notify.failure(`${name} is already in contacts`);
+  //   return;
+  // } else {
+  //   const newContact = { name: name, id: loginInputId, number: tel };
+  //   setContacts(prev => [...prev, newContact]);
+  // }
+
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <label className={css.form__label}>
@@ -12,6 +34,7 @@ export default function Form() {
           className={css.form__input}
           type="text"
           name="name"
+          placeholder="Enter contact name..."
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
@@ -24,12 +47,13 @@ export default function Form() {
           type="tel"
           name="number"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          placeholder="Enter phone-number..."
           required
         />
       </label>
 
       <button type="submit" className={css.form__button}>
-        Add contacts
+        Add contact
       </button>
     </form>
   );

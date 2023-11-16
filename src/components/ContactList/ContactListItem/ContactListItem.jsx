@@ -1,19 +1,23 @@
 import React from 'react';
 import css from './ContactListItem.module.css';
 import PropTypes from 'prop-types';
-import { usePhoneBook } from 'hooks/PhoneBookContext';
+import { removeContact } from '../../../redux/contactSlice';
+import { useDispatch } from 'react-redux';
 
 export default function ContactListItem({ id, name, number }) {
-  const { deleteContact } = usePhoneBook();
+  const dispatch = useDispatch();
+
+  const handleRemove = () => {
+    dispatch(removeContact(id));
+  };
+
   return (
     <li className={css.contactListItem__item} key={id.toString()}>
       {name}: {number}
       <button
         className={css.contactListItem__button}
         type="button"
-        onClick={() => {
-          deleteContact(id);
-        }}
+        onClick={handleRemove}
       >
         Delete
       </button>

@@ -1,9 +1,16 @@
 import React from 'react';
 import css from './Filter.module.css';
-import { usePhoneBook } from 'hooks/PhoneBookContext';
+import { useDispatch } from 'react-redux';
+import { filterContact } from '../../redux/contactSlice';
 
 export default function Filter() {
-  const { filter, changeSubmit } = usePhoneBook();
+  const dispatch = useDispatch();
+
+  const handleFilter = e => {
+    const value = e.target.value;
+    dispatch(filterContact(value));
+  };
+
   return (
     <div className={css.filter}>
       <p className={css.filter__title}>Find contacts by name</p>
@@ -11,8 +18,7 @@ export default function Filter() {
         className={css.filter__input}
         type="text"
         name="nametofilter"
-        value={filter}
-        onChange={changeSubmit}
+        onChange={handleFilter}
       />
     </div>
   );

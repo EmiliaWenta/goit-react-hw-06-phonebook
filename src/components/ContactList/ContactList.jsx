@@ -1,14 +1,13 @@
 import React from 'react';
 import css from './ContactList.module.css';
 import ContactListItem from './ContactListItem/ContactListItem';
-
-import { usePhoneBook } from 'hooks/PhoneBookContext';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export default function ContactList() {
-  const { contacts, filter } = usePhoneBook();
+  const contacts = useSelector(state => state.contact);
 
   const contactListItem = contacts
-    .filter(item => item.name.toLowerCase().includes(filter.toLowerCase()))
+    // .filter(item => item.name.toLowerCase().includes(filter.toLowerCase()))
     .map(item => (
       <ContactListItem
         id={item.id}
