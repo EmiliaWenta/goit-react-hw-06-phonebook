@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://emiliawenta.github.io/goit-react-hw-06-phonebook/",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.23.3",
     "components": "^0.1.0",
     "eslint-config-react-app": "^7.0.1",
     "hooks": "^0.3.2",
