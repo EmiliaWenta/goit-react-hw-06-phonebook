@@ -1,6 +1,5 @@
 import React from 'react';
 import css from './Form.module.css';
-
 import { addContact } from '../../redux/contactSlice';
 import { useDispatch } from 'react-redux';
 
@@ -15,16 +14,6 @@ export default function Form() {
     dispatch(addContact(name, tel));
     form.reset();
   };
-
-  // const arrayOfName = contacts.map(contact => contact.name.toLowerCase());
-
-  // if (arrayOfName.includes(name.toLowerCase())) {
-  //   Notify.failure(`${name} is already in contacts`);
-  //   return;
-  // } else {
-  //   const newContact = { name: name, id: loginInputId, number: tel };
-  //   setContacts(prev => [...prev, newContact]);
-  // }
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>

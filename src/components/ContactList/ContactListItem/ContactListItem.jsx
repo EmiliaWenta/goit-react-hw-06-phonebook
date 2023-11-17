@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { removeContact } from '../../../redux/contactSlice';
 import { useDispatch } from 'react-redux';
 
-export default function ContactListItem({ id, name, number }) {
+export default function ContactListItem({ id, name, tel }) {
   const dispatch = useDispatch();
 
   const handleRemove = () => {
@@ -13,7 +13,7 @@ export default function ContactListItem({ id, name, number }) {
 
   return (
     <li className={css.contactListItem__item} key={id.toString()}>
-      {name}: {number}
+      {name}: {tel}
       <button
         className={css.contactListItem__button}
         type="button"
@@ -28,5 +28,5 @@ export default function ContactListItem({ id, name, number }) {
 ContactListItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  tel: PropTypes.string.isRequired,
 };

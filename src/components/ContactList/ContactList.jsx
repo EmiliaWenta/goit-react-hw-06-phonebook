@@ -5,14 +5,15 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export default function ContactList() {
   const contacts = useSelector(state => state.contact);
+  const filterValue = useSelector(state => state.filter);
 
   const contactListItem = contacts
-    // .filter(item => item.name.toLowerCase().includes(filter.toLowerCase()))
+    .filter(item => item.name.toLowerCase().includes(filterValue.toLowerCase()))
     .map(item => (
       <ContactListItem
         id={item.id}
         name={item.name}
-        number={item.number}
+        tel={item.tel}
         key={item.id}
       />
     ));
