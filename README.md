@@ -1,7 +1,7 @@
-# Phonebook using lifeCycle of React
+# Phonebook using Redux/ReduxToolkit of React
 
-> Task nr 4 from GoIT course - module: React.js Live demo
-> [_here_](https://emiliawenta.github.io/goit-react-hw-04-phonebook/).
+> Task nr 6 from GoIT course - module: React.js Live demo
+> [_here_](https://emiliawenta.github.io/goit-react-hw-06-phonebook/).
 
 ## Table of Contents
 
@@ -16,8 +16,8 @@
 
 ## General Information
 
-- This project concerns task no. 4 from the GoIT react.js module course.
-- Task goal: learnig how to using hooks.
+- This project concerns task no. 6 from the GoIT react.js module course.
+- Task goal: learnig how to using redux and reduxToolkit.
 - Main setup and functionality.
   - Form - here you can add new contact (name and phone-number).
   - The updated contact list is displayed below.
@@ -35,6 +35,8 @@ Project is created with:
 - JS
 - JSX
 - CSS
+- redux
+- reduxToolkit
 
 ## Screenshots
 
