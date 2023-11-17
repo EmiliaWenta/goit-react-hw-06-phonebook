@@ -19,9 +19,8 @@ export function App() {
 
   useEffect(() => {
     const savedContacts = JSON.parse(localStorage.getItem('contacts'));
-    console.log(savedContacts);
-
     dispatch(checkContact(savedContacts));
+    // eslint-disable-next-line
   }, []);
 
   return (
