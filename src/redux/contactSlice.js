@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
@@ -21,9 +22,8 @@ const contactSlice = createSlice({
             `${action.payload.name} already exist in Your Phonebook`
           );
           return;
-        } else {
-          state.push(action.payload);
         }
+        state.push(action.payload);
       },
       prepare: (name, tel) => {
         return {

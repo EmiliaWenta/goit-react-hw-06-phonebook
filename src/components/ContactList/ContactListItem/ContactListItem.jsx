@@ -1,8 +1,10 @@
 import React from 'react';
-import css from './ContactListItem.module.css';
+import { useDispatch } from 'react-redux';
+
 import PropTypes from 'prop-types';
 import { removeContact } from '../../../redux/contactSlice';
-import { useDispatch } from 'react-redux';
+
+import css from './ContactListItem.module.css';
 
 export default function ContactListItem({ id, name, tel }) {
   const dispatch = useDispatch();

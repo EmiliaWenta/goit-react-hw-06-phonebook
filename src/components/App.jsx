@@ -1,12 +1,13 @@
-import React from 'react';
-import Form from './Form/Form';
-import ContactList from './ContactList/ContactList';
-import Filter from './Filter/Filter';
-import css from './App.module.css';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { useEffect } from 'react';
+
+import Form from './Form/Form';
+import Filter from './Filter/Filter';
+import ContactList from './ContactList/ContactList';
 import { checkContact } from '../redux/contactSlice';
+
+import css from './App.module.css';
 
 export function App() {
   const contacts = useSelector(state => state.contact);

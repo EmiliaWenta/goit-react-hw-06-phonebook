@@ -1,7 +1,9 @@
 import React from 'react';
-import css from './ContactList.module.css';
-import ContactListItem from './ContactListItem/ContactListItem';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+
+import ContactListItem from './ContactListItem/ContactListItem';
+
+import css from './ContactList.module.css';
 
 export default function ContactList() {
   const contacts = useSelector(state => state.contact);
